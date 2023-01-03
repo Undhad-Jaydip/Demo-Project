@@ -18,7 +18,7 @@
                         <h3>Welcome to Admin page</h3>
                     </div>
                     <div class="card-body">
-                        <a href="{{ url('add/user') }}" class="btn btn-primary">Add User</a>
+                        <a href="add/user" class="btn btn-primary">Add User</a>
                     </div>
                 </div>
             </div>

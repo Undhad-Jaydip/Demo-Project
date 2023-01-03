@@ -16,9 +16,10 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('newview');
 });
 Route::get('/admin/login',[AdminController::class,'index']);
 Route::post('/admin/login',[AdminController::class,'login']);
-Route::get('add/user',[UserController::class,'index']);
+
+
 
