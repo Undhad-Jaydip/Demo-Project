@@ -21,16 +21,22 @@
                         <h4 class="text-center">Admin Login</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('admin/login') }}" method="post">
+                        <form action="{{ url('admin/login') }}" method="POST">
                             @csrf
                             <div class="form-control">
                                 <label for="email">Email Id</label>
                                 <input type="email" name="email" id="email" class="form-group"/>
+                                @error('email')
+                                    <div class="text-danger">{{$message}}</div>
+                                @enderror
                             </div>
 
                             <div class="form-control">
                                 <label for="password">Password</label>
                                 <input type="password" name="password" id="password" class="form-group" />
+                                @error('password')
+                                    <div class="text-danger">{{$message}}</div>
+                                @enderror
                             </div>
                             <div>
                                 <button type="submit" class="btn btn-success">Login</button>

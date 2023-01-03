@@ -13,16 +13,15 @@
         <div class="message"></div>
         <div class="row-mt-5">
             <div class="col-md-6">
-                <div class="card">
+                <div class="card m-5">
                     <div class="card-header">
                         <h3>Welcome to Admin page</h3>
                     </div>
                     <div class="card-body">
-                        <a href="add/user" class="btn btn-primary">Add User</a>
+                    <a href="/adduser" ><button type="button" class="btn btn-primary">Add User</button></a>
+                    <a href="/userlist" ><button class="btn btn-primary" type="button">Show Userlist</button></a>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
+           </div>
 </body>
 </html>

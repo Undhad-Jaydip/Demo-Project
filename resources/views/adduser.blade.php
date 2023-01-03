@@ -14,27 +14,37 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                    @if(Session::has('success'))
-                        <span class="alert alert-success">{{Session::get('success')}}</span>
+                    @if(Session::has('error'))
+                        <span class="alert alert-danger">{{Session::get('error')}}</span>
                     @endif    
                         <h3>Add User Form</h3>
                     </div>
                     <div class="card-body">
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="{{ url('adduser') }}" method="POST" enctype="multipart/form-data">
                             @csrf
                         <div class="mb-3">
-                            <label for="username" class="form-label">Username</label>
-                            <input type="text" class="form-control" id="username" name="username"/>
+                            <label for="name" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Enter username..."/>
                         </div>
 
                         <div class="mb-3">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" name="email"/>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email..."/>
                         </div>
+
+                        <input type="hidden" class="form-control" id="password" name="password" />
+                        
 
                         <div class="mb-3">
                             <label for="profile_image" class="form-label">ProfileImage</label>
                             <input type="file" class="form-control" id="profile_image" name="profile_image" />
+                            @error('profile_image')
+                                <span class="text-danger">{{$message}}</span>
+                            @enderror
+                        </div>
+
+                        <div class="mb-3">
+                            <button class="btn btn-primary" type="submit">Add User</button>
                         </div>
                         </form>
                     </div>

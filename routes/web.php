@@ -16,10 +16,15 @@ use App\Http\Controllers\UserController;
 */
 
 Route::get('/', function () {
-    return view('newview');
+    return view('welcome');
+    // dd("success");
 });
 Route::get('/admin/login',[AdminController::class,'index']);
 Route::post('/admin/login',[AdminController::class,'login']);
+Route::get('/adduser',[UserController::Class,'create']);
+Route::post('/adduser',[UserController::class,'store']);
+Route::get('/userlist',[UserController::class,'show']);
+
 
 
 
